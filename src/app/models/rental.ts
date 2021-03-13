@@ -1,7 +1,7 @@
 export interface Rental{
-    rentalId:number;
-    productId:number;
-    customerId:number;
+    id: number;
+    brandName: string;
+    customerName: string;
     rentalDate:Date;
     dailyPrice:Date;
 }
