@@ -7,5 +7,6 @@ export interface Product{
     modelYear:number;
     dailyPrice:number;
     description:string;
+    previevImagePath:string;
 }
 

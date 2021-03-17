@@ -1,6 +1,6 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
     <span class="visually-hidden">Loading...</span>
-  </div>
+</div>
 
 <table *ngIf="dataLoaded==true" class="table">
     <thead>
@@ -16,6 +16,9 @@
         </tr>
     </thead>
     <tr *ngFor="let product of products">
+        <div class="d-flex" style="height: 45%">
+            <img src="{{product.previevImagePath}}" class="card-img-top" alt="{{product.previevImagePath}}">
+        </div>
         <td>{{product.id}}</td>
         <td>{{product.brandId}}</td>
         <td>{{product.colorId}}</td>

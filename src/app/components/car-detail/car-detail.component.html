@@ -1,0 +1,26 @@
+<table *ngIf="car" class="table table-striped mt-2">
+    <tbody>
+      <tr>
+        <th scope="row">Marka</th>
+        <td>{{ car.brandName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Model</th>
+        <td>{{ car.carName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Renk</th>
+        <td>{{ car.colorName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Fiyat</th>
+        <td>
+          {car.dailyPrice}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Aciklama</th>
+        <td>{{ car.description }}</td>
+      </tr>
+    </tbody>
+  </table>
