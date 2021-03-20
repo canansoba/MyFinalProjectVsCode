@@ -6,6 +6,11 @@
     <span class="visually-hidden">Yükleniyor...</span>
 </div>
 
+<div class="mb-3">
+    <input type="text" [(ngModel)]="filterBrandText" class="form-control" id="filterBrandText" 
+    placeholder="Marka Belirleyiniz">
+</div>
+
 <ul class="list-group">
     <li 
     [class]="getAllBrandClass()"

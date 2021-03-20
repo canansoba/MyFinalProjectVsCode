@@ -1,3 +1,8 @@
+<div class="mb-3">
+  <input type="text" [(ngModel)]="filterColorText" class="form-control" id="filterColorText" 
+  placeholder="Renk giriniz">
+</div>
+
 <ul class="list-group">
   <li  [class]="getAllCategoryClass()" routerLink = "/colors">Tüm Renkler</li>
   <li class="nav-item" (click)="setCurrentColor(color)" *ngFor="let color of colors">

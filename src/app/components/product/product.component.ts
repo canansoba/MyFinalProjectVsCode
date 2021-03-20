@@ -11,6 +11,8 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
+
+  filterCarText:string;
   products:Product[] = [];
   carImages:CarImage[] = [];
   dataLoaded = false;
@@ -24,13 +26,22 @@ export class ProductComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params=>{
       if(params["colorId"]){
         this.getCarDetailsByColor(params["colorId"])
-      }else{
+      }else if(params["brandId"]){
+        this.getCarDetailsByBrand(params["brandId"])
+      }
+      else{
         this.getProducts();
       }
     })
     
   }
 
+  getCarImages(){
+    this.carImageService.getCarImages().subscribe((response) => {
+      this.carImages = response.data;
+    });
+  }
+  
   getProducts(){
     this.productService.getProducts().subscribe(response=>{
       this.products = response.data

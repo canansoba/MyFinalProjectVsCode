@@ -10,6 +10,7 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandComponent implements OnInit {
 
+  filterBrand: string;
   brands: Brand[] = [];
   currentBrand?: Brand;
   dataLoaded = false;
@@ -30,8 +31,16 @@ export class BrandComponent implements OnInit {
     });
   }
 
-  setCurrentBrand(brand: Brand) {
-    this.currentBrand = brand;
+  setQueryParams(brand:Brand){
+    if(brand)
+    {
+      this.setCurrentBrand()
+    }
+       
+  }
+
+  setCurrentBrand() {
+    //this.currentBrand = brand;
     this.router.navigate(['products/'], { queryParams: { brandId: this.currentBrand.brandId }, queryParamsHandling: 'merge', relativeTo: this.route});
   }
 

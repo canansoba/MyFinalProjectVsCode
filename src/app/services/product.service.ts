@@ -21,7 +21,7 @@ export class ProductService {
   }
 
   getCarDetailsByBrand(brandId:number){
-    let newPath = this.apiUrl + "productss/getcarsdetailsbybrand?brandId=" + brandId;
+    let newPath = this.apiUrl + "products/getcarsdetailsbybrand?brandId=" + brandId;
     return this.httpClient
       .get<ListResponseModel<Product>>(newPath);
       
